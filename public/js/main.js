@@ -110,8 +110,6 @@ function makeViz(error, data) {
 				tooltip.style("visibility", "hidden");
 			});
 
-
-
 	// svg.append("line")
 	// 	.attr("x1", 100).attr("y1", height/2)
 	// 	.attr("x2", width -100).attr("y2", height/2)
