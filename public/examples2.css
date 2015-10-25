@@ -4,16 +4,9 @@
 }
 
 @font-face {
-	font-family: NeueBlack;
-	src: url(NeueHaasUnicaPro-Black.ttf);
-}
-
-@font-face {
 	font-family: Neue;
 	src: url(NeueHaasUnicaPro-Regular.ttf);
 }
-
-
 
 html {
 	-webkit-font-smoothing: antialiased;
@@ -59,6 +52,50 @@ h1 {
 
 }
 
+/* section 2 */
+.box {
+	position: absolute;
+	top: 50%;
+	margin-top: -20px;
+	width:140px;
+	margin-left: -70px; 
+	height: 160px;
+	/*background-color: rgba(255,255,255,0.2);*/
+	font-family: 'HelveticaNeue', sans-serif;
+	font-size: 0.92em;
+	text-align: center;
+	border: 1px solid rgba(200,200,200,0.5);
+	padding: 20px;
+	/*background-color: rgba(255,255,255,0.9);*/
+}
+
+/*.box :hover {
+	background-color: rgba(0,0,0,0.1);
+}*/
+
+.b1 {
+	left: 20%;
+}
+
+.b2 {
+	left: 40%;
+}
+
+.b3 {
+	left: 60%;
+}
+
+.b4 {
+	left: 80%;
+}
+
+.bImg {
+	width: 40px;
+	padding: 24px;
+	padding-top: 30px;
+	opacity: 0.9;
+}
+
 /* image */
 .grocery {
 	position: absolute;
@@ -67,3 +104,14 @@ h1 {
 	margin-bottom: -260px;
 	margin-right: 5%;
 }
+
+.grocery2 {
+	position: absolute;
+	width: 440px;
+	right: 50%;
+	margin-right: -230px;
+	top: 21.2%;
+}
+
+
+
