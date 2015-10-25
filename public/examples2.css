@@ -1,0 +1,69 @@
+@font-face {
+	font-family: HelveticaNeue;
+	src: url(HelveticaNeue-BoldCond.ttf);
+}
+
+@font-face {
+	font-family: NeueBlack;
+	src: url(NeueHaasUnicaPro-Black.ttf);
+}
+
+@font-face {
+	font-family: Neue;
+	src: url(NeueHaasUnicaPro-Regular.ttf);
+}
+
+
+
+html {
+	-webkit-font-smoothing: antialiased;
+}
+
+h1 {
+	position: absolute;
+	font-family: 'Neue', sans-serif;
+	top: 28px;
+	font-size: 0.7em;
+	letter-spacing: 8px;
+	font-weight: 400;
+
+	width: 100px;
+	left: 50%;
+	margin-left: -50px;
+}
+
+#first_des {
+	position: absolute;
+	font-family: 'HelveticaNeue', sans-serif !important;
+	font-weight: 600;
+	font-size: 2.8em;
+	width: 410px;
+
+	left: 50%;
+	margin-left: 0%;
+	bottom: 50%;
+	margin-bottom: -30px;
+}
+
+#second_des {
+	position: absolute;
+	font-family: 'Neue', sans-serif !important;
+	font-weight: 400;
+	font-size: 0.9em;
+	width: 350px;
+
+	left: 50%;
+	margin-left: 0%;
+	bottom: 50%;
+	margin-bottom: -90px;
+
+}
+
+/* image */
+.grocery {
+	position: absolute;
+	right: 50%;
+	bottom: 50%;
+	margin-bottom: -260px;
+	margin-right: 5%;
+}
