@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 
+
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link rel="shortcut icon" href="logo.png" />
 	<title>AiReceipt</title>
-	<!-- <meta name="author" content="Alvaro Trigo Lopez" /> -->
-	<!-- <meta name="description" content="pagePiling.js plugin by Alvaro Trigo." /> -->
-	<!-- <meta name="keywords"  content="pile,piling,piling.js,stack,pages,scrolling,stacking,touch,fullpile,scroll,plugin,jquery" /> -->
-	<!-- <meta name="Resource-type" content="Document" /> -->
 
-	<!-- <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato:300,400,700" /> -->
+
 	<link rel="stylesheet" type="text/css" href="page/jquery.pagepiling.css" />
 	<link rel="stylesheet" type="text/css" href="examples2.css" />
+	<link rel="stylesheet" type="text/css" href="viz.css" />
 
 	<!-- // <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> -->
 	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
@@ -23,7 +21,7 @@
 	    	$('#pagepiling').pagepiling({
 			    // sectionsColor: ['#bfda00', '#2ebe21', '#2C3E50', '#51bec4'],
 			    // sectionsColor: ['#fff', 'rgba(246,246,246,1)', '#fff', '#fff'],
-			    sectionsColor: ['#fff', '#fff', '#fff', '#fff'],
+			    sectionsColor: ['#fff', '#eeeeee', '#fff', '#fff'],
 			    navigation: {
 			    	'position': 'right',
 			   		'tooltips': ['Page 1', 'Page 2', 'Page 3', 'Pgae 4']
@@ -32,6 +30,8 @@
 	    });
     </script>
 </head>
+
+
 <body>
 	<div id="pagepiling">
 	    <div class="section" id="section1">
@@ -68,10 +68,20 @@
 	    <div class="section" id="section4">
 	    	<div class="intro">
 	    		<h1>AiReceipt</h1>
+
+	    		<div id = "viz"></div>
 				<!-- <p>But back button won't work!</p> -->
 	    	</div>
 	    </div>
 	</div>
+
+
+	<!-- library -->
+	<script src="/js/d3.min.js"></script>
+	<script src="/js/queue.min.js"></script>
+
+	<!-- javascript -->
+	<script src="/js/main.js"></script>
 
 </body>
 </html>
