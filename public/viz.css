@@ -1,0 +1,39 @@
+text {
+  font: 10px sans-serif;
+}
+
+.axis path {
+  display: none;
+}
+
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.group-label {
+  font-weight: bold;
+  text-anchor: end;
+}
+
+form {
+  font-family: 'neue', sans-serif !important;
+  position: absolute;
+  /*width: 240px;*/
+  left: 10%;
+  margin-left: 60px;
+  top: 15%;
+  line-height: 180%;
+  font-size: 14px;
+}
+
+#viz {
+
+  position: absolute;
+  width: 60%;
+  height: 70%;
+  top: 20%;
+  left: 10%;
+  border: 1px solid rgba(0,0,0,0.1);
+}

@@ -16,3 +16,8 @@ exports.scroll = function(req, res) {
 	console.log('scroll page requested');
 	res.render('index.html');
 }
+
+exports.test = function(req, res) {
+	console.log('test page requested');
+	res.render('test.html');
+}

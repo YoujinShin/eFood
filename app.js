@@ -49,6 +49,7 @@ var routes = require('./routes/index.js');
 
 app.get('/', routes.index);
 app.get('/scroll', routes.scroll);
+app.get('/test', routes.test);
 
 
 // create NodeJS HTTP server using 'app'
