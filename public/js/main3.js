@@ -12,7 +12,7 @@ var y0 = d3.scale.ordinal()
 var y1 = d3.scale.linear();
 
 var x = d3.scale.ordinal()
-    .rangeRoundBands([0, width], .5, 0);
+    .rangeRoundBands([0, width], .2, 0);
 
 
 var xAxis = d3.svg.axis()
