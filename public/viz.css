@@ -53,5 +53,6 @@ form {
   color: #fff;
   background-color: rgba(0,0,0,0.8);
   visibility: hidden;
+  text-transform: uppercase;
   /*font-family: Georgia, Arial, Helvetica, sans-serif !important;*/
 }
