@@ -74,21 +74,10 @@ h1 {
 	background-color: rgba(0,0,0,0.1);
 }*/
 
-.b1 {
-	left: 20%;
-}
-
-.b2 {
-	left: 40%;
-}
-
-.b3 {
-	left: 60%;
-}
-
-.b4 {
-	left: 80%;
-}
+.b1 { left: 20%; }
+.b2 { left: 40%; }
+.b3 { left: 60%; }
+.b4 { left: 80%; }
 
 .bImg {
 	width: 40px;

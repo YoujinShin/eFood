@@ -27,7 +27,7 @@ var xAxis = d3.svg.axis()
     .scale(x)
     .orient("bottom")
     // .tickFormat(formatDate);
-    .ticks(10)
+    .ticks(5)
     .tickFormat(d3.time.format("%m/%d/%y"));
 
 var nest = d3.nest()
@@ -91,12 +91,14 @@ d3.tsv("receipt_simple2.tsv", function(error, data) {
         tooltip.text(d.item +" $ "+d.value);
         tooltip.style("visibility", "visible");
         // console.log(d.item);
+        d3.select(this).style('opacity', 0.82);
       })
       .on("mousemove", function(){
         tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+12)+"px");
       })
       .on("mouseout", function(){
         tooltip.style("visibility", "hidden");
+        d3.select(this).style('opacity', 1);
       });
 
   // group.filter(function(d, i) { return !i; }).append("g")
