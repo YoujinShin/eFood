@@ -1,8 +1,9 @@
 text {
-  font: 10px sans-serif;
+  font: 10px 'HelveticaNeue';
 }
 
 .axis path {
+  margin-top: 10px;
   display: none;
 }
 
@@ -18,7 +19,7 @@ text {
 }
 
 form {
-  font-family: 'neue', sans-serif !important;
+  font-family: 'Neue', sans-serif !important;
   position: absolute;
   /*width: 240px;*/
   left: 10%;
@@ -41,7 +42,7 @@ form {
 #tooltip {   
   position: absolute;
   z-index: 100; 
-  font-family: 'Neue', sans-serif;
+  font-family: 'HelveticaNeue', sans-serif;
   /*position: relative;*/
   text-align: center;
   padding: 10px;       
