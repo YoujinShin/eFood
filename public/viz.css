@@ -31,9 +31,26 @@ form {
 #viz {
 
   position: absolute;
-  width: 60%;
+  width: 50%;
   height: 70%;
   top: 20%;
   left: 10%;
   border: 1px solid rgba(0,0,0,0.1);
+}
+
+#tooltip {   
+  position: absolute;
+  z-index: 100; 
+  font-family: 'Neue', sans-serif;
+  /*position: relative;*/
+  text-align: center;
+  padding: 10px;       
+  font-size: 0.8em;
+  border: 1px;
+  border-radius: 4px;
+  pointer-events: none;
+  color: #fff;
+  background-color: rgba(0,0,0,0.8);
+  visibility: hidden;
+  /*font-family: Georgia, Arial, Helvetica, sans-serif !important;*/
 }
