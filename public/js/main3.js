@@ -22,7 +22,7 @@ var x = d3.time.scale()
   .domain([ parseDate('10/12/15'), parseDate('10/17/15') ])
   .range([100, width - 40]);
 
-var xWidth = x(parseDate('10/13/15')) - x(parseDate('10/12/15')) - 2;
+var xWidth = x(parseDate('10/13/15')) - x(parseDate('10/12/15')) - 0.6;
 
 var xAxis = d3.svg.axis()
     .scale(x)
@@ -87,6 +87,7 @@ d3.tsv("receipt_simple2.tsv", function(error, data) {
       .attr("x", function(d) { return x(d.date) - xWidth/2; })
       .attr("y", function(d) { return y1(d.value); })
       .attr("width", xWidth)
+      .attr("stroke", function(d) { return getColor(d.group); })
       // .attr("width", x.rangeBand())
       .attr("height", function(d) { return y0.rangeBand() - y1(d.value); })
       .on("mouseover", function(d) {
@@ -172,11 +173,19 @@ function transitionStacked() {
 
 function getColor(d) {
 
-  if(d == 1) { return '#b94658'; }
-  else if(d == 2) { return '#c05868'; }
-  else if(d == 3) { return '#c76a79'; }
-  else if(d == 4) { return '#ce7d8a'; }
-  else if(d == 5) { return '#d5909a'; }
+  // pink
+  // if(d == 1) { return '#b94658'; }
+  // else if(d == 2) { return '#c05868'; }
+  // else if(d == 3) { return '#c76a79'; }
+  // else if(d == 4) { return '#ce7d8a'; }
+  // else if(d == 5) { return '#d5909a'; }
+
+  // green
+  if(d == 1) { return '#58b946'; }
+  else if(d == 2) { return '#68c058'; }
+  else if(d == 3) { return '#79c76a'; }
+  else if(d == 4) { return '#8ace7d'; }
+  else if(d == 5) { return '#9ad590'; }
 }
 
 
