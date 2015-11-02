@@ -12,6 +12,7 @@
 	<link rel="stylesheet" type="text/css" href="examples2.css" />
 	<link rel="stylesheet" type="text/css" href="viz.css" />
 
+
 	<!-- // <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> -->
 	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
 
@@ -70,9 +71,12 @@
 	    		<h1>AiReceipt</h1>
 
 	    		<form>
-	    			<label><input type="radio" name="mode" value="stacked"> By date</label>
+	    			<input type="button" id="mode_stack" value="By Date" onclick="transitionStacked()" class="btn">
 
-					<label style="margin-left:30px"><input type="radio" name="mode" value="multiples" checked> By categories</label>
+					<input type="button" id="mode_multiples" value="By Categories" onclick="transitionMultiples()" class="btn" style="margin-left:6px">
+
+<!-- 	    			<label><input type="radio" name="mode" value="stacked"> By date</label>
+					<label style="margin-left:30px"><input type="radio" name="mode" value="multiples" checked> By categories</label> -->
 				</form>
 
 	    		<div id = "viz"></div>

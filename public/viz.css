@@ -23,8 +23,9 @@ form {
   position: absolute;
   /*width: 240px;*/
   left: 10%;
-  margin-left: 60px;
+  margin-left: 0px;
   top: 15%;
+  /*margin-top: 20px;*/
   line-height: 180%;
   font-size: 14px;
 }
@@ -33,10 +34,12 @@ form {
 
   position: absolute;
   width: 50%;
-  height: 70%;
-  top: 20%;
+  height: 72%;
+  top: 22%;
+  margin-top: 0px;
   left: 10%;
-  border: 1px solid rgba(0,0,0,0.1);
+  background-color: rgba(0,0,0,0.03);
+  /*border: 1px solid rgba(0,0,0,0.1);*/
 }
 
 #tooltip {   
@@ -56,3 +59,30 @@ form {
   text-transform: uppercase;
   /*font-family: Georgia, Arial, Helvetica, sans-serif !important;*/
 }
+
+.btn {
+  font-family: 'HelveticaNeue', sans-serif;
+  padding: 6px;
+  padding-left: 16px;
+  padding-right: 16px;
+  border-radius: 8px;
+  font-size: 10px;
+  color: black;
+  border: 1px solid rgba(0,0,0,0.4);
+  background-color: white;
+  letter-spacing: 1px;
+}
+/*58b946*/
+.btn:active {
+  outline: none;
+  /*background-color: rgba(0,0,0,1);*/
+}
+
+.btn:focus {outline:0;}
+
+#mode_stack {
+  /*background-color: rgba(0,0,0,1);*/
+}
+
+
+
