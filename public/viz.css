@@ -21,32 +21,28 @@ text {
 form {
   font-family: 'Neue', sans-serif !important;
   position: absolute;
-  /*width: 240px;*/
   left: 10%;
   margin-left: 0px;
-  top: 15%;
-  /*margin-top: 20px;*/
+  bottom: 80%;
+  margin-bottom: 15px;
   line-height: 180%;
   font-size: 14px;
 }
 
 #viz {
-
   position: absolute;
   width: 50%;
-  height: 72%;
-  top: 22%;
+  height: 70%;
+  top: 20%;
   margin-top: 0px;
   left: 10%;
-  background-color: rgba(0,0,0,0.03);
-  /*border: 1px solid rgba(0,0,0,0.1);*/
+  background-color: rgba(0,0,0,0.04);
 }
 
 #tooltip {   
   position: absolute;
   z-index: 100; 
   font-family: 'HelveticaNeue', sans-serif;
-  /*position: relative;*/
   text-align: center;
   padding: 10px;       
   font-size: 0.8em;
@@ -57,7 +53,6 @@ form {
   background-color: rgba(0,0,0,0.8);
   visibility: hidden;
   text-transform: uppercase;
-  /*font-family: Georgia, Arial, Helvetica, sans-serif !important;*/
 }
 
 .btn {
@@ -72,17 +67,9 @@ form {
   background-color: white;
   letter-spacing: 1px;
 }
-/*58b946*/
-.btn:active {
-  outline: none;
-  /*background-color: rgba(0,0,0,1);*/
-}
 
-.btn:focus {outline:0;}
-
-#mode_stack {
-  /*background-color: rgba(0,0,0,1);*/
-}
+.btn:active { outline: none; }
+.btn:focus { outline: 0; }
 
 
 

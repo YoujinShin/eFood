@@ -29,7 +29,6 @@ h1 {
 	color: white;
 }
 
-
 #first_des {
 	position: absolute;
 	font-family: 'HelveticaNeue', sans-serif !important;
@@ -64,20 +63,13 @@ h1 {
 	width:140px;
 	margin-left: -70px; 
 	height: 160px;
-	/*background-color: rgba(255,255,255,0.3);*/
 	font-family: 'HelveticaNeue', sans-serif;
 	font-size: 0.96em;
 	text-align: center;
 	border: 1px solid rgba(200,200,200,0.68);
 	padding: 20px;
 	color: rgba(255,255,255,0.8);
-	/*color: rgba(0,0,0,0.84);*/
-	/*background-color: rgba(240,240,240,0.9);*/
 }
-
-/*.box :hover {
-	background-color: rgba(0,0,0,0.1);
-}*/
 
 .b1 { left: 20%; }
 .b2 { left: 40%; }
