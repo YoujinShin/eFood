@@ -3,7 +3,7 @@ var parseDate = d3.time.format("%m/%d/%y").parse;
     // formatYear = d3.format("02d");
     // formatDate = function(d) { return "Q" + ((d.getMonth() / 3 | 0) + 1) + formatYear(d.getFullYear() % 100); };
 
-var margin = {top: 10, right: 50, bottom: 40, left: 50},
+var margin = {top: 10, right: 40, bottom: 40, left: 40},
     width = parseInt(d3.select('#viz').style('width'), 10) - margin.left - margin.right,
     height = parseInt(d3.select('#viz').style('height'), 10) - margin.top - margin.bottom;
 
@@ -20,7 +20,7 @@ var y1 = d3.scale.linear();
 
 var x = d3.time.scale()
   .domain([ parseDate('10/12/15'), parseDate('10/17/15') ])
-  .range([100, width - 40]);
+  .range([80, width - 30]);
 
 var xWidth = x(parseDate('10/13/15')) - x(parseDate('10/12/15')) - 0.6;
 
@@ -74,6 +74,8 @@ d3.tsv("receipt_simple2.tsv", function(error, data) {
       .attr("class", "group-label")
       .attr("x", 40)
       .attr("y", function(d) { return y1(d.values[0].value / 2); })
+      .attr("text-anchor", "start")
+      // .attr("dy", 30)
       .attr("dy", ".32em")
       .text(function(d) { return "Group " + d.key; });
 

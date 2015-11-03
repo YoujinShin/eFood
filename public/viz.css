@@ -21,7 +21,7 @@ text {
 form {
   font-family: 'Neue', sans-serif !important;
   position: absolute;
-  left: 10%;
+  right: 10%;
   margin-left: 0px;
   bottom: 80%;
   margin-bottom: 15px;
@@ -31,12 +31,23 @@ form {
 
 #viz {
   position: absolute;
-  width: 50%;
+  width: 49%;
   height: 70%;
   top: 20%;
   margin-top: 0px;
   left: 10%;
+  border-top: 1px solid rgba(0,0,0,0.6);
   background-color: rgba(0,0,0,0.04);
+}
+
+#viz2 {
+  position: absolute;
+  width: 29%;
+  height: 70%;
+  top: 20%;
+  margin-top: 0px;
+  left: 61%;
+  border-top: 1px solid rgba(0,0,0,0.6);
 }
 
 #tooltip {   
