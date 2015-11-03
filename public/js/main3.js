@@ -20,7 +20,7 @@ var y1 = d3.scale.linear();
 
 var x = d3.time.scale()
   .domain([ parseDate('10/12/15'), parseDate('10/17/15') ])
-  .range([80, width - 30]);
+  .range([120, width - 40]);
 
 var xWidth = x(parseDate('10/13/15')) - x(parseDate('10/12/15')) - 0.6;
 
@@ -53,9 +53,12 @@ var svg = d3.select("#viz").append("svg")
 d3.tsv("receipt_simple2.tsv", function(error, data) {
 
   data.forEach(function(d) {
+    d.cdate = d.date;
     d.date = parseDate(d.date);
     d.value = +d.value;
   });
+
+  makeList(data);
 
   var dataByGroup = nest.entries(data);
 
