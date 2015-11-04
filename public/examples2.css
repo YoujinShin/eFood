@@ -118,7 +118,7 @@ h2 {
 	padding-left: 0px;
 	border-bottom: 1px solid rgba(0,0,0,0.1);
 	font-family: 'Neue', sans-serif;
-	font-size: 12px;
+	font-size: 11px;
 	/*color: gray;*/
 	font-weight: 400;
 	letter-spacing: 1px;
@@ -142,7 +142,7 @@ h2 {
 .value {
 	position: absolute;
 	/*right: 0px;*/
-	left: 180px;
+	left: 220px;
 	/*padding-left: 30px;*/
 }
 
