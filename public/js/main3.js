@@ -92,7 +92,11 @@ d3.tsv("receipt_simple2.tsv", function(error, data) {
         tooltip.text(d.item +" $ "+d.value);
         tooltip.style("visibility", "visible");
         // console.log(d.item);
-        d3.select(this).style('opacity', 0.82);
+        // d3.select(this).style('opacity', 0.82);
+        d3.select(this).moveToFront();
+
+        d3.select(this).style('stroke', 'black');
+        // d3.select(this).moveToFront();
       })
       .on("mousemove", function(){
         tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+12)+"px");
@@ -100,6 +104,7 @@ d3.tsv("receipt_simple2.tsv", function(error, data) {
       .on("mouseout", function(){
         tooltip.style("visibility", "hidden");
         d3.select(this).style('opacity', 1);
+        d3.select(this).style('stroke', function(d) { return getColor(d.group); });
       });
 
     group.append("text")
@@ -107,9 +112,14 @@ d3.tsv("receipt_simple2.tsv", function(error, data) {
       .attr("x", 0)
       .attr("y", function(d) { return y1(d.values[0].value / 2); })
       .attr("text-anchor", "start")
-      // .attr("text-anchor", "middle")
-      // .attr("dy", 30)
       // .attr("dy", ".32em")
+      .on("mouseover", function(d) {
+        d3.select(this).style('fill', '#58b946');
+      })
+      .on("mousemove", function(){ })
+      .on("mouseout", function(){
+        d3.select(this).style('fill', 'black');
+      })
       .text(function(d) { return getGroup(d.key); });
 
   // group.filter(function(d, i) { return !i; }).append("g")
@@ -191,10 +201,17 @@ function getColor(d) {
   // else if(d == 5) { return '#d5909a'; }
 
   // green
-  if(d == 1) { return '#58b946'; }
-  else if(d == 2) { return '#68c058'; }
-  else if(d == 3) { return '#79c76a'; }
-  else if(d == 4) { return '#8ace7d'; }
+  // if(d == 1) { return '#58b946'; }
+  // else if(d == 2) { return '#68c058'; }
+  // else if(d == 3) { return '#79c76a'; }
+  // else if(d == 4) { return '#8ace7d'; }
+  // else if(d == 5) { return '#9ad590'; }
+
+  // green
+  if(d == 1) { return '#346f2a'; }
+  else if(d == 2) { return '#469438'; }
+  else if(d == 3) { return '#58b946'; }
+  else if(d == 4) { return '#79c76a'; }
   else if(d == 5) { return '#9ad590'; }
 }
 
@@ -212,6 +229,13 @@ function getGroup(d) {
   // else if(d == 4) { return '| Meat'; }
   // else if(d == 5) { return '| Drink'; }
 }
+
+d3.selection.prototype.moveToFront = function() {
+  console.log('hi');
+  return this.each(function(){
+    this.parentNode.appendChild(this);
+  });
+};
 
 
 
