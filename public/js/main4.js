@@ -1,35 +1,63 @@
-function makeList(data) {
+var itemLists;
 
+function makeList_date(data) {
+
+	byGroup(data);
 	var currentData = byDate(data);
-	// var currentData = byGroup(data);
-	console.log(currentData);
 
-	// console.log(data);
-	currentData.forEach(function(d) {
+	currentData.forEach(function(d, i) {
 
-		// d3.select("#viz3").append("div")
-		// 	.attr("class", "item")
-		// 	.html( '<span class="strong">'+d.item +'</span>'
-		// 		+ ' $' + d.value
-		// 		+'        ' + d.cdate);
-		// console.log(d.item);
+		var currentItem = "item" + i;
 
-		d3.select("#viz3").append("div")
+		itemLists = d3.select("#viz3").append("div")
+			.attr("id", currentItem)
 			.attr("class", "item")
 			.html( d.cdate +
 				'<span class="strong">'+d.item +'</span>' +
 				'<span class="value">'+ '  $' + d.value +'</span>');
 	});
+
+	console.log('- make list by date');
+	// byDate(data);
+}
+
+function makeList_group(data) {
+
+	byDate(data);
+	var currentData = byGroup(data);
+
+	currentData.forEach(function(d, i) {
+
+		var currentItem = "item" + i;
+
+		itemLists = d3.select("#viz3").append("div")
+			.attr("id", currentItem)
+			.attr("class", "item")
+			.html( d.cdate +
+				'<span class="strong">'+d.item +'</span>' +
+				'<span class="value">'+ '  $' + d.value +'</span>');
+	});
+
+	console.log('- make list by group');
+	// byDate(data);
 }
 
 function byDate(data) {
 
-	return data.sort(function(a, b) { return a.date - b.date; });
+	var cData = data;
+	return cData.sort(function(a, b) { return a.date - b.date; });
 }
 
 function byGroup(data) {
 
-	// var cData = byDate(data);
+	var cData = data;
+	return cData.sort(function(a, b) { return a.group - b.group; });
+}
 
-	return data.sort(function(a, b) { return a.group - b.group; });
+function removeList() {
+
+	allData.forEach(function(d, i) {
+	    currentItem = "#item" + i;
+	    d3.select(currentItem).remove();
+	  });
 }

@@ -16,6 +16,8 @@ var y0 = d3.scale.ordinal()
 var y1 = d3.scale.linear();
 var totalSpending = 0;
 
+var allData;
+
 // var x = d3.scale.ordinal()
 //     .rangeRoundBands([0, width], .2, 0);
 
@@ -53,6 +55,8 @@ var svg = d3.select("#viz").append("svg")
 ////
 d3.tsv("receipt_simple2.tsv", function(error, data) {
 
+  
+
   data.forEach(function(d) {
     d.cdate = d.date;
     d.date = parseDate(d.date);
@@ -60,9 +64,11 @@ d3.tsv("receipt_simple2.tsv", function(error, data) {
     totalSpending = totalSpending + d.value;
   });
 
+  allData = data;
+
   d3.select("#total").text('$' + totalSpending);
 
-  makeList(data);
+  
 
   var dataByGroup = nest.entries(data);
 
@@ -169,6 +175,8 @@ d3.tsv("receipt_simple2.tsv", function(error, data) {
 
   transitionStacked();
   // transitionMultiples();
+
+  makeList_date(data);
 });
 
 
@@ -182,6 +190,11 @@ function transitionMultiples() {
 
   d3.select('#mode_stack').style('border-color','rgba(0,0,0,0.34)');
   d3.select('#mode_multiples').style('border-color','rgba(0,0,0,1)');
+
+  // update list
+  console.log('multiples');
+  removeList();
+  makeList_group(allData);
 }
 
 function transitionStacked() {
@@ -193,6 +206,11 @@ function transitionStacked() {
 
   d3.select('#mode_stack').style('border-color','rgba(0,0,0,1)');
   d3.select('#mode_multiples').style('border-color','rgba(0,0,0,0.34)');
+
+  // update list
+  console.log('stacked');
+  removeList();
+  makeList_date(allData);
 }
 
 function getColor(d) {
