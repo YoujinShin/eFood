@@ -117,8 +117,8 @@ h2 {
 	padding: 20px;
 	padding-left: 0px;
 	border-bottom: 1px solid rgba(0,0,0,0.1);
-	font-family: 'Neue', sans-serif !important;
-	font-size: 11px;
+	font-family: 'Neue', sans-serif;
+	font-size: 12px;
 	/*color: gray;*/
 	font-weight: 400;
 	letter-spacing: 1px;
@@ -127,9 +127,22 @@ h2 {
 	/*text-transform: uppercase;*/
 }
 .strong {
+	position: absolute;
 	color: black;
-	/*border-left: 1px solid #58b946;*/
-	padding-left: 30px;
-	/*font-weight: bold;*/
+	display: inline-block;
+	left: 100px;
+	/*font-weight: 600;*/
+	/*font-family: 'HelveticaNeue', sans-serif !important;*/
+}
+
+.strong:first-letter {
+	text-transform: uppercase;
+}
+
+.value {
+	position: absolute;
+	/*right: 0px;*/
+	left: 180px;
+	/*padding-left: 30px;*/
 }
 

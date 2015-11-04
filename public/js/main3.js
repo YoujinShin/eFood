@@ -14,6 +14,7 @@ var y0 = d3.scale.ordinal()
     .rangeRoundBands([height, 0], .1);
 
 var y1 = d3.scale.linear();
+var totalSpending = 0;
 
 // var x = d3.scale.ordinal()
 //     .rangeRoundBands([0, width], .2, 0);
@@ -56,7 +57,10 @@ d3.tsv("receipt_simple2.tsv", function(error, data) {
     d.cdate = d.date;
     d.date = parseDate(d.date);
     d.value = +d.value;
+    totalSpending = totalSpending + d.value;
   });
+
+  d3.select("#total").text('$' + totalSpending);
 
   makeList(data);
 

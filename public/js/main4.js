@@ -13,7 +13,7 @@ function makeList(data) {
 		d3.select("#viz3").append("div")
 			.attr("class", "item")
 			.html( d.cdate +
-				'<span class="strong">'+d.item 
-				+ ' $' + d.value +'</span>');
+				'<span class="strong">'+d.item +'</span>' +
+				'<span class="value">'+ '  $' + d.value +'</span>');
 	});
 }
