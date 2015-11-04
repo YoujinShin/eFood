@@ -63,9 +63,11 @@ form {
   font-size: 50px;
   */
 
-  font-family: 'HelveticaNeue', sans-serif !important;
-  font-weight: 600;
-  font-size: 2.8em;
+  /*font-family: 'HelveticaNeue', sans-serif !important;*/
+  font-family: 'Neue', sans-serif;
+  font-weight: 300;
+  /*color: gray;*/
+  font-size: 2.4em;
   padding-top: 20px;
 }
 
@@ -110,7 +112,7 @@ form {
   font-family: 'HelveticaNeue', sans-serif;
   text-align: center;
   padding: 10px;       
-  font-size: 0.8em;
+  font-size: 11px;
   border: 1px;
   border-radius: 6px;
   pointer-events: none;

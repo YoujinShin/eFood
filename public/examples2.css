@@ -114,18 +114,18 @@ h2 {
 }
 
 .item {
-	padding: 18px;
+	padding: 20px;
 	padding-left: 0px;
 	border-bottom: 1px solid rgba(0,0,0,0.1);
 	font-family: 'Neue', sans-serif !important;
-	font-size: 12px;
+	font-size: 11px;
 	color: black;
 	/*border-left: 1px solid green;*/
 	/*text-transform: uppercase;*/
 }
 .strong {
-	border-left: 1px solid #58b946;
-	padding-left: 30px;
+	/*border-left: 1px solid #58b946;
+	padding-left: 30px;*/
 	/*font-weight: bold;*/
 }
 
