@@ -3,7 +3,7 @@ var parseDate = d3.time.format("%m/%d/%y").parse;
     // formatYear = d3.format("02d");
     // formatDate = function(d) { return "Q" + ((d.getMonth() / 3 | 0) + 1) + formatYear(d.getFullYear() % 100); };
 
-var margin = {top: 10, right: 40, bottom: 40, left: 40},
+var margin = {top: 10, right: 0, bottom: 20, left: 0},
     width = parseInt(d3.select('#viz').style('width'), 10) - margin.left - margin.right,
     height = parseInt(d3.select('#viz').style('height'), 10) - margin.top - margin.bottom;
 
@@ -20,7 +20,7 @@ var y1 = d3.scale.linear();
 
 var x = d3.time.scale()
   .domain([ parseDate('10/12/15'), parseDate('10/17/15') ])
-  .range([120, width - 40]);
+  .range([140, width - 60]);
 
 var xWidth = x(parseDate('10/13/15')) - x(parseDate('10/12/15')) - 0.6;
 
@@ -73,14 +73,7 @@ d3.tsv("receipt_simple2.tsv", function(error, data) {
       .attr("class", "group")
       .attr("transform", function(d) { return "translate(0," + y0(d.key) + ")"; });
 
-  group.append("text")
-      .attr("class", "group-label")
-      .attr("x", 40)
-      .attr("y", function(d) { return y1(d.values[0].value / 2); })
-      .attr("text-anchor", "start")
-      // .attr("dy", 30)
-      .attr("dy", ".32em")
-      .text(function(d) { return "Group " + d.key; });
+
 
   group.selectAll("rect")
       .data(function(d) { return d.values; })
@@ -109,15 +102,27 @@ d3.tsv("receipt_simple2.tsv", function(error, data) {
         d3.select(this).style('opacity', 1);
       });
 
+    group.append("text")
+      .attr("class", "group-label")
+      .attr("x", 0)
+      .attr("y", function(d) { return y1(d.values[0].value / 2); })
+      .attr("text-anchor", "start")
+      // .attr("text-anchor", "middle")
+      // .attr("dy", 30)
+      // .attr("dy", ".32em")
+      .text(function(d) { return getGroup(d.key); });
+
   // group.filter(function(d, i) { return !i; }).append("g")
   //     .attr("class", "x axis")
   //     .attr("transform", "translate(0," + y0.rangeBand() + ")")
   //     // .attr("transform", "translate(0," + y0.rangeBand() + ")")
   //     .call(xAxis);
 
+  var ty = y0.rangeBand() + 10;
+
   group.filter(function(d, i) { return !i; }).append("g")
       .attr("class", "x axis")
-      .attr("transform", "translate(0," + y0.rangeBand() + ")")
+      .attr("transform", "translate(0," + ty + ")")
       // .attr("transform", "translate(0," + y0.rangeBand() + ")")
       .call(xAxis);
 
@@ -193,6 +198,20 @@ function getColor(d) {
   else if(d == 5) { return '#9ad590'; }
 }
 
+function getGroup(d) {
+
+  if(d == 1) { return 'Dairy'; }
+  else if(d == 2) { return 'Fruits'; }
+  else if(d == 3) { return 'Bakery'; }
+  else if(d == 4) { return 'Meat'; }
+  else if(d == 5) { return 'Drink'; }
+
+  // if(d == 1) { return '| Dairy'; }
+  // else if(d == 2) { return '| Fruits'; }
+  // else if(d == 3) { return '| Bakery'; }
+  // else if(d == 4) { return '| Meat'; }
+  // else if(d == 5) { return '| Drink'; }
+}
 
 
 
