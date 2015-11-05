@@ -126,25 +126,18 @@ d3.tsv("receipt_simple2.tsv", function(error, data) {
 
         if(c == "rgb(0, 0, 0)") {
           d3.select(this).style('fill', '#469438');
-
-          console.log(d.key);
           selectItems(d.key);
         } else {
           d3.select(this).style('fill', '#000000');
+          unselectItems(d.key);
         }
 
       })
       .text(function(d) { return getGroup(d.key); });
 
-  // function unselectLabels() {
-
-  //   labels.each(function(e) {
-  //       d3.select(this).style("fill", "black");
-  //   });
-  // }
 
   function selectItems(key) {
-    // console.log('select items');
+
     removeList();
 
     allData.forEach(function(d, i) {
@@ -155,7 +148,8 @@ d3.tsv("receipt_simple2.tsv", function(error, data) {
         d3.select("#viz3").append("div")
             .attr("id", currentItem)
             .attr("class", "item")
-            .style('background-color', '#def1da')
+            // .style('background-color', '#def1da')
+            .style('background-color', '#eeeeee')
             .html( d.cdate +
               '<span class="strong">'+d.item +'</span>' +
               '<span class="value">'+ '  $' + d.value +'</span>');
@@ -172,9 +166,23 @@ d3.tsv("receipt_simple2.tsv", function(error, data) {
     });
   }
 
-  // function getItemBG(key) {
-  //   if()
-  // }
+
+  function unselectItems(key) {
+
+    removeList();
+
+    allData.forEach(function(d, i) {
+      var currentItem = "item" + i;
+
+          d3.select("#viz3").append("div")
+            .attr("id", currentItem)
+            .attr("class", "item")
+            .style('background-color', 'white')
+            .html( d.cdate +
+              '<span class="strong">'+d.item +'</span>' +
+              '<span class="value">'+ '  $' + d.value +'</span>');
+    });
+  }
 
   // group.filter(function(d, i) { return !i; }).append("g")
   //     .attr("class", "x axis")
@@ -258,20 +266,6 @@ function transitionStacked() {
 
 function getColor(d) {
 
-  // pink
-  // if(d == 1) { return '#b94658'; }
-  // else if(d == 2) { return '#c05868'; }
-  // else if(d == 3) { return '#c76a79'; }
-  // else if(d == 4) { return '#ce7d8a'; }
-  // else if(d == 5) { return '#d5909a'; }
-
-  // green
-  // if(d == 1) { return '#58b946'; }
-  // else if(d == 2) { return '#68c058'; }
-  // else if(d == 3) { return '#79c76a'; }
-  // else if(d == 4) { return '#8ace7d'; }
-  // else if(d == 5) { return '#9ad590'; }
-
   // green
   if(d == 1) { return '#346f2a'; }
   else if(d == 2) { return '#469438'; }
@@ -287,12 +281,6 @@ function getGroup(d) {
   else if(d == 3) { return 'Bakery'; }
   else if(d == 4) { return 'Meat'; }
   else if(d == 5) { return 'Drink'; }
-
-  // if(d == 1) { return '| Dairy'; }
-  // else if(d == 2) { return '| Fruits'; }
-  // else if(d == 3) { return '| Bakery'; }
-  // else if(d == 4) { return '| Meat'; }
-  // else if(d == 5) { return '| Drink'; }
 }
 
 d3.selection.prototype.moveToFront = function() {

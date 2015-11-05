@@ -36,14 +36,14 @@ function makeList_group(data) {
 
 function byDate(data) {
 
-	var cData = data;
-	return cData.sort(function(a, b) { return a.date - b.date; });
+	// var cData = data;
+	return data.sort(function(a, b) { return a.date - b.date; });
 }
 
 function byGroup(data) {
 
-	var cData = data;
-	return cData.sort(function(a, b) { return a.group - b.group; });
+	// var cData = data;
+	return data.sort(function(a, b) { return a.group - b.group; });
 }
 
 function removeList() {
