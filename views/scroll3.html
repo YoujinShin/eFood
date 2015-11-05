@@ -7,6 +7,9 @@
 	<link rel="shortcut icon" href="logo.png" />
 	<title>AiReceipt</title>
 
+	<script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.js'></script>
+	<link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.css' rel='stylesheet' />
+
 
 	<link rel="stylesheet" type="text/css" href="page/jquery.pagepiling.css" />
 	<link rel="stylesheet" type="text/css" href="examples2.css" />
@@ -81,6 +84,15 @@
 					<label style="margin-left:30px"><input type="radio" name="mode" value="multiples" checked> By categories</label> -->
 				</form>
 
+				<input type="button" id="mode_viz" value="VIZ" onclick="showViz()" class="btn">
+
+				<input type="button" id="mode_map" value="MAP" onclick="showMap()" class="btn" style="margin-left:6px">
+
+
+				<div id = "map"></div>
+
+
+
 	    		<div id = "viz"></div>
 	    		<div id = "viz2">
 	    			<div id="total_name">Total Spending</div>
@@ -99,8 +111,10 @@
 	<script src="/js/queue.min.js"></script>
 
 	<!-- javascript -->
+	<script src="/js/map.js"></script>
 	<script src="/js/main3.js"></script>
 	<script src="/js/main4.js"></script>
+
 
 </body>
 </html>

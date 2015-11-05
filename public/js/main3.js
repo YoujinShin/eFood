@@ -21,12 +21,6 @@ var fruitSpending = 0;
 var bakerySpending = 0;
 var meatSpending = 0;
 var drinkSpending = 0;
-//   if(d == 1) { return 'Dairy'; }
-//   else if(d == 2) { return 'Fruits'; }
-//   else if(d == 3) { return 'Bakery'; }
-//   else if(d == 4) { return 'Meat'; }
-//   else if(d == 5) { return 'Drink'; }
-// }
 
 var allData;
 
@@ -82,11 +76,7 @@ d3.tsv("receipt_simple2.tsv", function(error, data) {
     else if(d.group == 5) { drinkSpending = drinkSpending + d.value; }
   });
 
-// var dairySpending = 0;
-// var fruitSpending = 0;
-// var bakerySpending = 0;
-// var meatSpending = 0;
-// var drinkSpending = 0;
+  initMap(data);
 
   allData = data;
 
@@ -183,11 +173,9 @@ d3.tsv("receipt_simple2.tsv", function(error, data) {
                   if(currentId == eId) {
                     d3.select(this).style('stroke', 'black');
                     d3.select(this).moveToFront();
-                    // d3.select(this).attr("stroke-width", 2);
                   }
                 });
 
-                // d3.select(this).style('background-color', '#eeeeee');
                 d3.select(this).style('font-weight', 600);
               })
               .on("mouseout", function() {
@@ -197,10 +185,8 @@ d3.tsv("receipt_simple2.tsv", function(error, data) {
                   var eId = e.item  + ' ' +  e.cdate;
                   if(currentId == eId) {
                     d3.select(this).style('stroke', d.color);
-                    // d3.select(this).attr("stroke-width", 1);
                   }
                 });
-                // d3.select(this).style('background-color', 'white');
                 d3.select(this).style('font-weight', 400);
               });
 
@@ -221,11 +207,9 @@ d3.tsv("receipt_simple2.tsv", function(error, data) {
                 if(currentId == eId) {
                   d3.select(this).moveToFront();
                   d3.select(this).style('stroke', 'black');
-                  // d3.select(this).attr("stroke-width", 2);
                 }
               });
 
-              // d3.select(this).style('background-color', '#eeeeee');
               d3.select(this).style('font-weight', 600);
             })
             .on("mouseout", function() {
@@ -235,10 +219,8 @@ d3.tsv("receipt_simple2.tsv", function(error, data) {
                 var eId = e.item  + ' ' +  e.cdate;
                 if(currentId == eId) {
                   d3.select(this).style('stroke', d.color);
-                  // d3.select(this).attr("stroke-width", 1);
                 }
               });
-              // d3.select(this).style('background-color', 'white');
               d3.select(this).style('font-weight', 400);
             });
         }
@@ -268,11 +250,9 @@ d3.tsv("receipt_simple2.tsv", function(error, data) {
                 if(currentId == eId) {
                   d3.select(this).moveToFront();
                   d3.select(this).style('stroke', 'black');
-                  // d3.select(this).attr("stroke-width", 2);
                 }
               });
 
-              // d3.select(this).style('background-color', '#eeeeee');
               d3.select(this).style('font-weight', 600);
             })
             .on("mouseout", function() {
@@ -282,10 +262,8 @@ d3.tsv("receipt_simple2.tsv", function(error, data) {
                 var eId = e.item  + ' ' +  e.cdate;
                 if(currentId == eId) {
                   d3.select(this).style('stroke', d.color);
-                  // d3.select(this).attr("stroke-width", 1);
                 }
               });
-              // d3.select(this).style('background-color', 'white');
               d3.select(this).style('font-weight', 400);
             });
     });

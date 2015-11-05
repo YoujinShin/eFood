@@ -39,6 +39,8 @@ form {
   margin-top: 0px;
   left: 10%;
   border-top: 1px solid rgba(0,0,0,0.6);
+
+  visibility: hidden;
 }
 
 #viz2 {
@@ -48,6 +50,19 @@ form {
   top: 20%;
   height: 20%;
   right: 10%;
+  border-top: 1px solid rgba(0,0,0,0.6);
+
+
+}
+
+#map {
+
+  position: absolute;
+  width: 50%;
+  height: 70%;
+  top: 20%;
+  margin-top: 0px;
+  left: 10%;
   border-top: 1px solid rgba(0,0,0,0.6);
 }
 
