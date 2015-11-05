@@ -58,6 +58,10 @@ form {
   font-weight: 300;
   font-size: 40px;
   letter-spacing: 1px;
+
+  position: absolute;
+  left: 0px;
+  bottom: 32%;
 }
 
 #total_name {
@@ -68,6 +72,18 @@ form {
   letter-spacing: 1px;
   text-align: right;
   /*font-size: 1em !important;*/
+}
+
+#subTotal {
+  font-family: 'Neue', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: #58b946;
+  position: absolute;
+  right: 0px;
+  bottom: 32%;
+  visibility: hidden;
 }
 
 #viz3 {

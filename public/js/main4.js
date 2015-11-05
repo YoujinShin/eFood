@@ -13,7 +13,35 @@ function makeList_date(data) {
 			.attr("class", "item")
 			.html( d.cdate +
 				'<span class="strong">'+d.item +'</span>' +
-				'<span class="value">'+ '  $' + d.value +'</span>');
+				'<span class="value">'+ '  $' + d.value +'</span>')
+			.on("mouseover", function() {
+				var currentId = d.item + ' ' + d.cdate;
+
+				rects.each(function(e) {
+					var eId = e.item  + ' ' +  e.cdate;
+					if(currentId == eId) {
+						d3.select(this).style('stroke', 'black');
+						d3.select(this).moveToFront();
+						// d3.select(this).attr("stroke-width", 1);
+					}
+				});
+
+				// d3.select(this).style('background-color', '#eeeeee');
+				d3.select(this).style('font-weight', 600);
+			})
+			.on("mouseout", function() {
+				var currentId = d.item + ' ' + d.cdate;
+
+				rects.each(function(e) {
+					var eId = e.item  + ' ' +  e.cdate;
+					if(currentId == eId) {
+						d3.select(this).style('stroke', d.color);
+						// d3.select(this).attr("stroke-width", 1);
+					}
+				});
+				// d3.select(this).style('background-color', 'white');
+				d3.select(this).style('font-weight', 400);
+			});
 	});
 }
 
@@ -30,7 +58,35 @@ function makeList_group(data) {
 			.attr("class", "item")
 			.html( d.cdate +
 				'<span class="strong">'+d.item +'</span>' +
-				'<span class="value">'+ '  $' + d.value +'</span>');
+				'<span class="value">'+ '  $' + d.value +'</span>')
+			.on("mouseover", function() {
+				var currentId = d.item + ' ' + d.cdate;
+
+				rects.each(function(e) {
+					var eId = e.item  + ' ' +  e.cdate;
+					if(currentId == eId) {
+						d3.select(this).style('stroke', 'black');
+						d3.select(this).moveToFront();
+						// d3.select(this).attr("stroke-width", 2);
+					}
+				});
+
+				// d3.select(this).style('background-color', '#eeeeee');
+				d3.select(this).style('font-weight', 600);
+			})
+			.on("mouseout", function() {
+				var currentId = d.item + ' ' + d.cdate;
+
+				rects.each(function(e) {
+					var eId = e.item  + ' ' +  e.cdate;
+					if(currentId == eId) {
+						d3.select(this).style('stroke', d.color);
+						// d3.select(this).attr("stroke-width", 1);
+					}
+				});
+				// d3.select(this).style('background-color', 'white');
+				d3.select(this).style('font-weight', 400);
+			});
 	});
 }
 
