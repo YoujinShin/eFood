@@ -55,7 +55,6 @@ var svg = d3.select("#viz").append("svg")
 ////
 d3.tsv("receipt_simple2.tsv", function(error, data) {
 
-  
 
   data.forEach(function(d) {
     d.cdate = d.date;
@@ -67,8 +66,6 @@ d3.tsv("receipt_simple2.tsv", function(error, data) {
   allData = data;
 
   d3.select("#total").text('$' + totalSpending);
-
-  
 
   var dataByGroup = nest.entries(data);
 
@@ -83,15 +80,10 @@ d3.tsv("receipt_simple2.tsv", function(error, data) {
       .attr("class", "group")
       .attr("transform", function(d) { return "translate(0," + y0(d.key) + ")"; });
 
-
-
   group.selectAll("rect")
       .data(function(d) { return d.values; })
     .enter().append("rect")
-      .style("fill", function(d) { 
-        // return color(d.group); 
-        return getColor(d.group); 
-      })
+      .style("fill", function(d) { return getColor(d.group); })
       .attr("x", function(d) { return x(d.date) - xWidth/2; })
       .attr("y", function(d) { return y1(d.value); })
       .attr("width", xWidth)
@@ -101,12 +93,8 @@ d3.tsv("receipt_simple2.tsv", function(error, data) {
       .on("mouseover", function(d) {
         tooltip.text(d.item +" $ "+d.value);
         tooltip.style("visibility", "visible");
-        // console.log(d.item);
-        // d3.select(this).style('opacity', 0.82);
         d3.select(this).moveToFront();
-
         d3.select(this).style('stroke', 'black');
-        // d3.select(this).moveToFront();
       })
       .on("mousemove", function(){
         tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+12)+"px");
@@ -117,20 +105,76 @@ d3.tsv("receipt_simple2.tsv", function(error, data) {
         d3.select(this).style('stroke', function(d) { return getColor(d.group); });
       });
 
-    group.append("text")
+    labels = group.append("text")
       .attr("class", "group-label")
       .attr("x", 0)
       .attr("y", function(d) { return y1(d.values[0].value / 2); })
       .attr("text-anchor", "start")
-      // .attr("dy", ".32em")
-      .on("mouseover", function(d) {
-        d3.select(this).style('fill', '#58b946');
-      })
-      .on("mousemove", function(){ })
-      .on("mouseout", function(){
-        d3.select(this).style('fill', 'black');
+      .style('cursor','pointer')
+      // // .attr("dy", ".32em")
+      // .on("mouseover", function(d) {
+      //   // d3.select(this).style('fill', '#469438'); //469438 58b946
+      // })
+      // // .on("mousemove", function(){ })
+      // .on("mouseout", function(){
+      //   // d3.select(this).style('fill', 'black');
+      // })
+      .on("click", function(d) {
+      
+        var c = d3.select(this).style('fill');
+        unselectLabels();
+
+        if(c == "rgb(0, 0, 0)") {
+          d3.select(this).style('fill', '#469438');
+
+          console.log(d.key);
+          selectItems(d.key);
+        } else {
+          d3.select(this).style('fill', '#000000');
+        }
+
       })
       .text(function(d) { return getGroup(d.key); });
+
+  // function unselectLabels() {
+
+  //   labels.each(function(e) {
+  //       d3.select(this).style("fill", "black");
+  //   });
+  // }
+
+  function selectItems(key) {
+    // console.log('select items');
+    removeList();
+
+    allData.forEach(function(d, i) {
+      var currentItem = "item" + i;
+
+      if(d.group == key) {
+
+        d3.select("#viz3").append("div")
+            .attr("id", currentItem)
+            .attr("class", "item")
+            .style('background-color', '#def1da')
+            .html( d.cdate +
+              '<span class="strong">'+d.item +'</span>' +
+              '<span class="value">'+ '  $' + d.value +'</span>');
+        } else {
+
+          d3.select("#viz3").append("div")
+            .attr("id", currentItem)
+            .attr("class", "item")
+            .style('background-color', 'white')
+            .html( d.cdate +
+              '<span class="strong">'+d.item +'</span>' +
+              '<span class="value">'+ '  $' + d.value +'</span>');
+        }
+    });
+  }
+
+  // function getItemBG(key) {
+  //   if()
+  // }
 
   // group.filter(function(d, i) { return !i; }).append("g")
   //     .attr("class", "x axis")
@@ -174,9 +218,6 @@ d3.tsv("receipt_simple2.tsv", function(error, data) {
   // }
 
   transitionStacked();
-  // transitionMultiples();
-
-  // makeList_date(allData);
 });
 
 
@@ -185,6 +226,7 @@ function transitionMultiples() {
 
   var t = svg.transition().duration(750),
       g = t.selectAll(".group").attr("transform", function(d) { return "translate(0," + y0(d.key) + ")"; });
+
   g.selectAll("rect").attr("y", function(d) { return y1(d.value); });
   g.select(".group-label").attr("y", function(d) { return y1(d.values[0].value / 2); });
 
@@ -192,7 +234,7 @@ function transitionMultiples() {
   d3.select('#mode_multiples').style('border-color','rgba(0,0,0,1)');
 
   // update list
-  console.log('multiples');
+  unselectLabels();
   removeList();
   makeList_group(allData);
 }
@@ -201,6 +243,7 @@ function transitionStacked() {
 
   var t = svg.transition().duration(750),
       g = t.selectAll(".group").attr("transform", "translate(0," + y0(y0.domain()[0]) + ")");
+
   g.selectAll("rect").attr("y", function(d) { return y1(d.value + d.valueOffset); });
   g.select(".group-label").attr("y", function(d) { return y1(d.values[0].value / 2 + d.values[0].valueOffset); });
 
@@ -208,7 +251,7 @@ function transitionStacked() {
   d3.select('#mode_multiples').style('border-color','rgba(0,0,0,0.34)');
 
   // update list
-  console.log('stacked');
+  unselectLabels();
   removeList();
   makeList_date(allData);
 }
@@ -253,11 +296,18 @@ function getGroup(d) {
 }
 
 d3.selection.prototype.moveToFront = function() {
-  console.log('hi');
+
   return this.each(function(){
     this.parentNode.appendChild(this);
   });
 };
+
+function unselectLabels() {
+
+  labels.each(function(e) {
+      d3.select(this).style("fill", "black");
+  });
+}
 
 
 

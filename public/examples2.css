@@ -122,17 +122,12 @@ h2 {
 	/*color: gray;*/
 	font-weight: 400;
 	letter-spacing: 1px;
-	/*background-color: rgba(0,0,0,0.014);*/
-	/*border-left: 1px solid green;*/
-	/*text-transform: uppercase;*/
 }
 .strong {
 	position: absolute;
 	color: black;
 	display: inline-block;
 	left: 110px;
-	/*font-weight: 600;*/
-	/*font-family: 'HelveticaNeue', sans-serif !important;*/
 }
 
 .strong:first-letter {
@@ -141,8 +136,6 @@ h2 {
 
 .value {
 	position: absolute;
-	/*right: 0px;*/
 	left: 220px;
-	/*padding-left: 30px;*/
 }
 

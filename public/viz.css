@@ -14,15 +14,10 @@ text {
 }
 
 .group-label {
-  /*font-weight: bold;*/
-  /*text-anchor: middle;*/
-  /*font-family: 'Neue', sans-serif !important;*/
   font-size: 11px;
-  /*fill: white;*/
   font-weight: 300;
   z-index: 100;
   letter-spacing: 1px;
-  /*background-color: red;*/
 }
 
 form {
@@ -44,7 +39,6 @@ form {
   margin-top: 0px;
   left: 10%;
   border-top: 1px solid rgba(0,0,0,0.6);
-  /*background-color: rgba(0,0,0,0.03);*/
 }
 
 #viz2 {
@@ -62,9 +56,7 @@ form {
   /*font-family: 'HelveticaNeue', sans-serif !important;*/
   font-family: 'Neue', sans-serif;
   font-weight: 300;
-  /*color: gray;*/
   font-size: 40px;
-  /*padding-top: 15px;*/
   letter-spacing: 1px;
 }
 
@@ -110,19 +102,20 @@ form {
 #tooltip {   
   position: absolute;
   z-index: 100; 
-  font-family: 'HelveticaNeue', sans-serif;
+  font-family: 'Neue', sans-serif;
   text-align: center;
-  padding: 10px;  
-  padding-left: 16px;
-  padding-right: 16px;     
+  padding: 8px;  
+  padding-left: 14px;
+  padding-right: 14px;     
   font-size: 11px;
   border: 1px;
   border-radius: 12px;
   pointer-events: none;
   color: #fff;
-  background-color: rgba(0,0,0,0.78);
+
+  font-weight: 600;
+  background-color: rgba(0,0,0,0.82);
   visibility: hidden;
-  /*text-transform: uppercase;*/
   letter-spacing: 1px;
   display: inline-block;
 }
@@ -142,6 +135,7 @@ form {
   border: 1px solid rgba(0,0,0,0.4);
   background-color: white;
   letter-spacing: 1px;
+  cursor: pointer;
 }
 
 .btn:active { outline: none; }
