@@ -5,17 +5,21 @@ function makeList_date(data) {
 	byGroup(data);
 	var currentData = byDate(data);
 
+	console.log(currentData);
+
 	currentData.forEach(function(d, i) {
 
 		var currentItem = "item" + i;
+		console.log(d.group +' ' + d.date);
 
-		itemLists = d3.select("#viz3").append("div")
+		d3.select("#viz3").append("div")
 			.attr("id", currentItem)
 			.attr("class", "item")
 			.html( d.cdate +
 				'<span class="strong">'+d.item +'</span>' +
 				'<span class="value">'+ '  $' + d.value +'</span>');
 	});
+
 
 	console.log('- make list by date');
 	// byDate(data);
@@ -26,11 +30,14 @@ function makeList_group(data) {
 	byDate(data);
 	var currentData = byGroup(data);
 
+	console.log(currentData);
+
 	currentData.forEach(function(d, i) {
 
 		var currentItem = "item" + i;
+		console.log(d.group +' ' + d.date);
 
-		itemLists = d3.select("#viz3").append("div")
+		d3.select("#viz3").append("div")
 			.attr("id", currentItem)
 			.attr("class", "item")
 			.html( d.cdate +

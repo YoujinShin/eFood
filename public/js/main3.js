@@ -176,7 +176,7 @@ d3.tsv("receipt_simple2.tsv", function(error, data) {
   transitionStacked();
   // transitionMultiples();
 
-  makeList_date(data);
+  // makeList_date(allData);
 });
 
 
