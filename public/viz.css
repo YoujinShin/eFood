@@ -40,7 +40,7 @@ form {
   left: 10%;
   border-top: 1px solid rgba(0,0,0,0.6);
 
-  visibility: hidden;
+ 
 }
 
 #viz2 {
@@ -64,6 +64,8 @@ form {
   margin-top: 0px;
   left: 10%;
   border-top: 1px solid rgba(0,0,0,0.6);
+
+   visibility: hidden;
 }
 
 #total {
@@ -172,5 +174,26 @@ form {
 .btn:active { outline: none; }
 .btn:focus { outline: 0; }
 
+#mode_viz {
+  position: absolute;
+  bottom: 80%;
+  margin-bottom: 15px;
+  right: 40%;
+  width: 30px !important; 
+  height: 3px;
+  border-radius: 0px;
+  background-color: rgba(0,0,0,1);
+}
 
+#mode_map {
+  position: absolute;
+  bottom: 80%;
+  margin-bottom: 15px;
+  margin-right: 40px;
+  right: 40%;
+  width: 30px !important; 
+  height: 3px;
+  border-radius: 0px;
+  background-color: rgba(0,0,0,2);
+}
 

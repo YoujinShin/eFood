@@ -42,6 +42,8 @@ function initMap(data) {
 			})
 		}).addTo(map);
 
+	marker.bindPopup("<b>Whole Foods</b>").openPopup();
+
 
 	var marker2 = L.marker([40.7461815,-73.991451], {
 
@@ -50,6 +52,26 @@ function initMap(data) {
 				'marker-size': "large"
 			})
 		}).addTo(map);
-	// marker.addTo(base_layer);
+	
+	marker2.bindPopup("<b>Trader Joe's</b>").openPopup();
 }
+
+function showViz() {
+
+	d3.select("#mode_viz").style("background-color", 'rgba(0,0,0,1)');
+	d3.select("#mode_map").style("background-color", 'rgba(0,0,0,0.2)');
+
+	d3.select("#viz").style("visibility", "visible");
+	d3.select("#map").style("visibility", "hidden");
+}
+
+function showMap() {
+
+	d3.select("#mode_viz").style("background-color", 'rgba(0,0,0,0.2)');
+	d3.select("#mode_map").style("background-color", 'rgba(0,0,0,1)');
+
+	d3.select("#viz").style("visibility", "hidden");
+	d3.select("#map").style("visibility", "visible");
+}
+
 

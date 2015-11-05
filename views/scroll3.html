@@ -75,6 +75,12 @@
 
 	    		<h2>| Your Grocery Shopping Behavior</h2>
 
+				<div id="mode_viz"  onclick="showViz()" > </div>
+				<div id="mode_map" onclick="showMap()" > </div>
+
+<!-- 	    		<input type="button" id="mode_viz"  onclick="showViz()" >
+				<input type="button" id="mode_map" onclick="showMap()"  style="margin-left:6px"> -->
+
 	    		<form>
 	    			<input type="button" id="mode_stack" value="By Date" onclick="transitionStacked()" class="btn">
 
@@ -84,9 +90,7 @@
 					<label style="margin-left:30px"><input type="radio" name="mode" value="multiples" checked> By categories</label> -->
 				</form>
 
-				<input type="button" id="mode_viz" value="VIZ" onclick="showViz()" class="btn">
 
-				<input type="button" id="mode_map" value="MAP" onclick="showMap()" class="btn" style="margin-left:6px">
 
 
 				<div id = "map"></div>
