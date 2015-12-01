@@ -9,15 +9,5 @@ var moment = require("moment"); // date manipulation library
 
 exports.index = function(req, res) {
 	console.log('main page requested');
-	res.render('scroll3.html');
-}
-
-exports.scroll = function(req, res) {
-	console.log('scroll page requested');
 	res.render('index.html');
-}
-
-exports.test = function(req, res) {
-	console.log('test page requested');
-	res.render('test.html');
 }
