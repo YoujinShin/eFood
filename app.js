@@ -47,6 +47,7 @@ app.configure('development', function(){
 // ROUTES (Important!)
 var routes = require('./routes/index.js');
 app.get('/', routes.index);
+app.get('/data', routes.data);
 
 
 // create NodeJS HTTP server using 'app'
